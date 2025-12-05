@@ -1,0 +1,329 @@
+{
+    "Table": {
+        "AttributeDefinitions": [
+            {
+                "AttributeName": "source",
+                "AttributeType": "S"
+            },
+            {
+                "AttributeName": "timestamp",
+                "AttributeType": "N"
+            }
+        ],
+        "TableName": "dice-rolls",
+        "KeySchema": [
+            {
+                "AttributeName": "source",
+                "KeyType": "HASH"
+            },
+            {
+                "AttributeName": "timestamp",
+                "KeyType": "RANGE"
+            }
+        ],
+        "TableStatus": "ACTIVE",
+        "CreationDateTime": "2025-12-03T19:09:05.457000+00:00",
+        "ProvisionedThroughput": {
+            "NumberOfDecreasesToday": 0,
+            "ReadCapacityUnits": 0,
+            "WriteCapacityUnits": 0
+        },
+        "TableSizeBytes": 0,
+        "ItemCount": 0,
+        "TableArn": "arn:aws:dynamodb:us-east-1:585314962523:table/dice-rolls",
+        "TableId": "d7c17a82-2429-43d8-bc99-5f610800354a",
+        "BillingModeSummary": {
+            "BillingMode": "PAY_PER_REQUEST",
+            "LastUpdateToPayPerRequestDateTime": "2025-12-03T19:09:05.457000+00:00"
+        },
+        "DeletionProtectionEnabled": false,
+        "WarmThroughput": {
+            "ReadUnitsPerSecond": 12000,
+            "WriteUnitsPerSecond": 4000,
+            "Status": "ACTIVE"
+        }
+    }
+}
+
+
+
+(.venv) vscode ➜ /workspaces/aws-project-25f-Rostyslav369 (aws-deployment) $ aws dynamodb describe-table --table-name dice-rolls
+{
+    "Table": {
+        "AttributeDefinitions": [
+            {
+                "AttributeName": "source",
+                "AttributeType": "S"
+            },
+            {
+                "AttributeName": "timestamp",
+                "AttributeType": "N"
+            }
+        ],
+        "TableName": "dice-rolls",
+
+
+
+
+
+
+
+
+
+
+
+
+        vscode ➜ /workspaces/aws-project-25f-Rostyslav369 (aws-deployment) $ aws ec2 describe-instances --instance-ids i-0c8ed75b6e3afe324
+{
+    "Reservations": [
+        {
+            "ReservationId": "r-09e94e5bd2c5eccb7",
+            "OwnerId": "585314962523",
+            "Groups": [],
+            "Instances": [
+                {
+                    "Architecture": "x86_64",
+                    "BlockDeviceMappings": [
+                        {
+                            "DeviceName": "/dev/xvda",
+                            "Ebs": {
+                                "AttachTime": "2025-12-04T17:08:29+00:00",
+                                "DeleteOnTermination": true,
+                                "Status": "attached",
+                                "VolumeId": "vol-0c824269a39e0cdb9"
+                            }
+                        }
+                    ],
+                    "ClientToken": "6424cb67-d4ad-44f7-b8bc-49190a3ce7ed",
+                    "EbsOptimized": false,
+                    "EnaSupport": true,
+                    "Hypervisor": "xen",
+                    "IamInstanceProfile": {
+                        "Arn": "arn:aws:iam::585314962523:instance-profile/csd215-i
+nstance-profile",
+                        "Id": "AIPAYQR35RRN2BCHHZFBN"
+                    },
+                    "NetworkInterfaces": [
+                        {
+                            "Association": {
+                                "IpOwnerId": "amazon",
+                                "PublicDnsName": "",
+                                "PublicIp": "3.95.64.236"
+                            },
+                            "Attachment": {
+                                "AttachTime": "2025-12-04T17:08:29+00:00",
+                                "AttachmentId": "eni-attach-035f55dbd431c7443",
+                                "DeleteOnTermination": true,
+                                "DeviceIndex": 0,
+                                "Status": "attached",
+                                "NetworkCardIndex": 0
+                            },
+                            "Description": "",
+                            "Groups": [
+                                {
+                                    "GroupId": "sg-09404c1e05c42c8b1",
+                                    "GroupName": "csd215-ec2-sg"
+                                }
+                            ],
+                            "Ipv6Addresses": [],
+                            "MacAddress": "0a:ff:ff:88:49:e7",
+                            "NetworkInterfaceId": "eni-0d6795678bc364d92",
+                            "OwnerId": "585314962523",
+                            "PrivateIpAddress": "10.0.0.204",
+                            "PrivateIpAddresses": [
+                                {
+                                    "Association": {
+                                        "IpOwnerId": "amazon",
+                                        "PublicDnsName": "",
+                                        "PublicIp": "3.95.64.236"
+                                    },
+                                    "Primary": true,
+                                    "PrivateIpAddress": "10.0.0.204"
+                                }
+                            ],
+                            "SourceDestCheck": true,
+                            "Status": "in-use",
+                            "SubnetId": "subnet-04ffde17b6a476c50",
+                            "VpcId": "vpc-063b72160360487bd",
+                            "InterfaceType": "interface",
+                            "Operator": {
+                                "Managed": false
+                            }
+                        }
+                    ],
+                    "RootDeviceName": "/dev/xvda",
+                    "RootDeviceType": "ebs",
+                    "SecurityGroups": [
+                        {
+                            "GroupId": "sg-09404c1e05c42c8b1",
+                            "GroupName": "csd215-ec2-sg"
+                        }
+                    ],
+                    "SourceDestCheck": true,
+                    "Tags": [
+                        {
+                            "Key": "Name",
+                            "Value": "csd215-flask-instance"
+                        }
+                    ],
+                    "VirtualizationType": "hvm",
+                    "CpuOptions": {
+                        "CoreCount": 1,
+                        "ThreadsPerCore": 1
+                    },
+                    "CapacityReservationSpecification": {
+                        "CapacityReservationPreference": "open"
+                    },
+                    "HibernationOptions": {
+                        "Configured": false
+                    },
+                    "MetadataOptions": {
+                        "State": "applied",
+                        "HttpTokens": "required",
+                        "HttpPutResponseHopLimit": 2,
+                        "HttpEndpoint": "enabled",
+                        "HttpProtocolIpv6": "disabled",
+                        "InstanceMetadataTags": "disabled"
+                    },
+                    "EnclaveOptions": {
+                        "Enabled": false
+                    },
+                    "BootMode": "uefi-preferred",
+                    "PlatformDetails": "Linux/UNIX",
+                    "UsageOperation": "RunInstances",
+                    "UsageOperationUpdateTime": "2025-12-04T17:08:29+00:00",
+                    "PrivateDnsNameOptions": {
+                        "HostnameType": "ip-name",
+                        "EnableResourceNameDnsARecord": false,
+                        "EnableResourceNameDnsAAAARecord": false
+                    },
+                    "MaintenanceOptions": {
+                        "AutoRecovery": "default"
+                    },
+                    "CurrentInstanceBootMode": "legacy-bios",
+                    "NetworkPerformanceOptions": {
+                        "BandwidthWeighting": "default"
+                    },
+                    "Operator": {
+                        "Managed": false
+                    },
+                    "InstanceId": "i-0c8ed75b6e3afe324",
+                    "ImageId": "ami-0018b373aba829819",
+                    "State": {
+                        "Code": 16,
+                        "Name": "running"
+                    },
+                    "PrivateDnsName": "ip-10-0-0-204.ec2.internal",
+                    "PublicDnsName": "",
+                    "StateTransitionReason": "",
+                    "KeyName": "csd215-keypair",
+                    "AmiLaunchIndex": 0,
+                    "ProductCodes": [],
+                    "InstanceType": "t2.nano",
+                    "LaunchTime": "2025-12-05T17:22:35+00:00",
+                    "Placement": {
+                        "GroupName": "",
+                        "Tenancy": "default",
+                        "AvailabilityZone": "us-east-1a"
+                    },
+                    "Monitoring": {
+                        "State": "disabled"
+                    },
+                    "SubnetId": "subnet-04ffde17b6a476c50",
+                    "VpcId": "vpc-063b72160360487bd",
+                    "PrivateIpAddress": "10.0.0.204",
+                    "PublicIpAddress": "3.95.64.236"
+                }
+            ]
+        }
+    ]
+}
+(END)
+
+
+
+
+
+
+
+
+vscode ➜ /workspaces/aws-project-25f-Rostyslav369 (aws-deployment) $ aws lambda get-function --function-name csd215-lambda
+{
+    "Configuration": {
+        "FunctionName": "csd215-lambda",
+        "FunctionArn": "arn:aws:lambda:us-east-1:585314962523:function:csd215-lambda",
+        "Runtime": "python3.9",
+        "Role": "arn:aws:iam::585314962523:role/LabRole",
+        "Handler": "lambda_app.main",
+        "CodeSize": 2794,
+        "Description": "",
+        "Timeout": 3,
+        "MemorySize": 128,
+        "LastModified": "2025-12-04T17:40:56.000+0000",
+        "CodeSha256": "FfGWV5+JnmbcmyAhDoqedHu9xq3cCpZ7svbkb
+eKiES4=",
+        "Version": "$LATEST",
+        "VpcConfig": {
+            "SubnetIds": [
+                "subnet-073996c3fbea38398"
+            ],
+            "SecurityGroupIds": [
+                "sg-063050a6a6b783ce9"
+            ],
+            "VpcId": "vpc-063b72160360487bd",
+            "Ipv6AllowedForDualStack": false
+        },
+        "TracingConfig": {
+            "Mode": "PassThrough"
+        },
+        "RevisionId": "5c2d1c48-786b-4040-a5cb-9eb729bdd636"
+,
+        "State": "Active",
+        "LastUpdateStatus": "Successful",
+        "PackageType": "Zip",
+        "Architectures": [
+            "x86_64"
+        ],
+        "EphemeralStorage": {
+            "Size": 512
+        },
+        "SnapStart": {
+            "ApplyOn": "None",
+            "OptimizationStatus": "Off"
+        },
+        "RuntimeVersionConfig": {
+            "RuntimeVersionArn": "arn:aws:lambda:us-east-1::
+runtime:48c0f790371a08d913f94f05bbcb8cb1641dee331fe7924e60fd
+40126a861f01"
+        },
+        "LoggingConfig": {
+            "LogFormat": "Text",
+            "LogGroup": "/aws/lambda/csd215-lambda"
+        }
+    },
+    "Code": {
+        "RepositoryType": "S3",
+        "Location": "https://prod-iad-c1-djusa-tasks.s3.us-e
+ast-1.amazonaws.com/snapshots/585314962523/csd215-lambda-626
+6114f-9baf-49b7-a346-a27be04f2dca?versionId=R0_BgBc3JSAZ1nuP
+elfl0FtqUn4tPSDU&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJn%2F
+%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJGMEQCIGrngEH0Ef
+N9rCH9wHrbl2OTuwvqoyi8t7vINW41iFe8AiAhZEVQl95pPhCoVQPvLSB5I9
+wnbJXjME0iT%2F5HayLzkyqLAghiEAQaDDQ3OTIzMzAyNTM3OSIMBk8RrtY8
+MA3%2Bd8zxKugBmpSPG0j90Uri2ZrGYYUxsgJCG43bm5O0E6qI1D9nVh9z1D
+3KYlobW9SObzUVCzAO6H9J1BZqFjNkDZaqNRJ2XUSk1covJkDylCMPl%2Bup
+agjWBuT%2B%2FV2NroPTbZwdetbBkL3RvOeM5U2ryHbdNiVnmtGMIY0jL8Qh
+FAeOMniPaCXMrQZhSL82ovfcL0DaRpK98zz%2BOQ5XRjVORIThXox7rDdQlA
+FMqL1BUEDNzJos%2BoCTJAs3nqpS5R5YTwb2wjxyIi6XQsslKDnCHAsoJluy
+AdlMGnb14aKtH7Cr3%2BDrJgx8Bx%2FA1ZkrDjC1m8zJBjqOAdbRRFwrnVL3
+riCvotHhikOVnUwWdU%2B5G5AFKiNBlxZp8keim%2Fvjql%2F3OOe53ynvtl
+j8M3LvM0dNJvqWdhxK1cZC8iqLB4zEfZAFl4GfAfa4pGGQTM%2B6TaL0fnfu
+KJA4JvZyZwBKiRtCAZnpGNnlww%2F8TNhm%2FgO2tNPCdiAb%2Fudg%2F%2F
+eiT6AGidqxuIb2yp4%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-
+Date=20251205T182135Z&X-Amz-SignedHeaders=host&X-Amz-Expires
+=600&X-Amz-Credential=ASIAW7FEDUVR5ZK273LL%2F20251205%2Fus-e
+ast-1%2Fs3%2Faws4_request&X-Amz-Signature=483622c1581019a3ec
+0d4124d0356ffb54fd997612e31ca6e71ade738a572429"
+    }
+}
+(END)
